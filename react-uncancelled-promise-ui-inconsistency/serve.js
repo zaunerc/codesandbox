@@ -4,7 +4,7 @@ var app = express()
 
 app.use(express.static('.'))
 
-let port = 10000;
+let port = 9090;
 app.listen(port)
 
-console.log(`\nNow open the URL ---> http://localhost:${port} <--- in your browser.`);
+console.log(`===> Now open the URL http://localhost:${port} in your browser.`);

@@ -9,7 +9,7 @@ interface AppState {
 export class App extends React.Component<{}, AppState> {
 	
 	private initialIdToFetch = 1;
-	private initalAppLog = [`${new Date().toString()} Page Loaded.`];
+	private initalAppLog = [];
 	
 	private nextIdToFetch = 2;
 
@@ -39,9 +39,12 @@ export class App extends React.Component<{}, AppState> {
 					This proof of concept shows that it is important to think about cancelling
 					promises as soon as they are not needed anymore. Otherwise this might
 					lead to an inconsistent UI state.
+
 					Though the second promise is started after the first promise the result
 					the DisplayComponent is going to show in the end will be the result from the
 					first promise.
+					
+					This proof of concept takes about 10 seconds to complete.
 				</p>
 				<h1>DISPLAY COMPONENT</h1>
 				<DisplayComponent idToFetch={this.state.idToFetch}/>
@@ -54,6 +57,10 @@ export class App extends React.Component<{}, AppState> {
 	}
 
 	private scheduleLogMessages() {
+		setTimeout( () => {
+			this.setState({appLog: this.state.appLog.concat(`${new Date().toString()} STARTED PROOF OF CONCEPT.`)});	
+		}, 0);
+
 		setTimeout( () => {
 			this.setState({appLog: this.state.appLog.concat(`${new Date().toString()} Loaded DisplayComponent with initial props (idToFetch = ${this.initialIdToFetch}).`)});	
 		}, 0);
@@ -80,6 +87,10 @@ export class App extends React.Component<{}, AppState> {
 
 		setTimeout( () => {
 			this.setState({appLog: this.state.appLog.concat(`${new Date().toString()} Now the DisplayComponent displays the wrong return value.`)});	
+		}, 10000);
+
+		setTimeout( () => {
+			this.setState({appLog: this.state.appLog.concat(`${new Date().toString()} FINISHED PROOF OF CONCEPT.`)});	
 		}, 10000);
 	}
 }
