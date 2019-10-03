@@ -44,7 +44,8 @@ export class App extends React.Component<{}, AppState> {
 					the DisplayComponent is going to show in the end will be the result from the
 					first promise.
 					
-					This proof of concept takes about 10 seconds to complete.
+					This proof of concept takes about 10 seconds to complete. To restart the
+					PoC just reload the site.
 				</p>
 				<h1>DISPLAY COMPONENT</h1>
 				<DisplayComponent idToFetch={this.state.idToFetch}/>
