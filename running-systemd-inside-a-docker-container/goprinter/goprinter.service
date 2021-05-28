@@ -1,0 +1,9 @@
+[Unit]
+Description=goprinter Service
+After=syslog.target
+
+[Service]
+WorkingDirectory=/tmp
+ExecStart=/appl/goprinter
+#StandardOutput=journal
+#StandardError=journal

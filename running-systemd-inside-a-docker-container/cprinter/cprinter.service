@@ -1,0 +1,9 @@
+[Unit]
+Description=cprinter Service
+After=syslog.target
+
+[Service]
+WorkingDirectory=/tmp
+ExecStart=/appl/cprinter
+#StandardOutput=journal
+#StandardError=journal
