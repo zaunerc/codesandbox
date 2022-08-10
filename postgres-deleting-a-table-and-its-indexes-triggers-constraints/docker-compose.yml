@@ -1,0 +1,17 @@
+# file docker-compose.yml
+version: '3.3'
+services:
+
+    postgres:
+        # Name of the superuser will be "postgres" if not specified otherwise. 
+        # The default database will be named after the superuser (e.g. "postgres").
+
+        # $ psql -h localhost -p 5432 -U postgre
+
+        # https://hub.docker.com/_/postgres
+        image: postgres:14.4
+        environment: 
+            POSTGRES_PASSWORD: postgrespwd
+        
+        ports:
+            - 5432:5432
