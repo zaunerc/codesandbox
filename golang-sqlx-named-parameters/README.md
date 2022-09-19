@@ -1,4 +1,4 @@
-Code for [one of my blog posts](https://zauner.nllk.net/post/FIXME/).
+Code for [one of my blog posts](https://zauner.nllk.net/post/0044-golang-sqlx-named-parameters/).
 
 # Run
 
